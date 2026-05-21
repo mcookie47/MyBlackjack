@@ -5,6 +5,9 @@
 using namespace std;
 
 void deck(double card_suites[]);
+
+void deal();
+
 int i;
 
 int main()
@@ -12,6 +15,10 @@ int main()
     //Array for the deck
 
     double cards_spade[13], cards_club[13], cards_diamond[13], cards_hearts[13];
+
+    srand(time(NULL));
+
+    int num = (rand() % 13) + 1;
 
     cout << "* SUITES *" << endl;
     cout << "Spades:\t\t";
@@ -22,6 +29,11 @@ int main()
     deck(cards_diamond);
     cout << "Hearts:\t\t";
     deck(cards_hearts);
+    
+    cout << num;
+
+    void deal();
+
 }
 
 void deck(double card_suites[]) {
@@ -40,4 +52,8 @@ void deck(double card_suites[]) {
             cout << "King" << " ";
     }
     cout << "\n";
+}
+
+void deal() {
+
 }
