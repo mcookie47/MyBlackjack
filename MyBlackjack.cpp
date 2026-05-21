@@ -4,6 +4,8 @@
 
 using namespace std;
 
+void cards_deck();
+
 int main()
 {
     //Array for the deck
@@ -22,3 +24,4 @@ int main()
     }
 }
 
+void cards_deck();
