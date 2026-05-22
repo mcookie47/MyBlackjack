@@ -1,4 +1,10 @@
-//C++ if program of BlackJack
+/*
+ * C++ program of BlackJack
+ * Created by: [Matt]
+ * Date: 05/20/26
+ *
+ * Description: Simulation of the game Blackjack with only 1 deck of cards.
+ */
 
 #include <iostream>
 
@@ -7,17 +13,12 @@ using namespace std;
 void deal();
 
 
-int i;
-
 int main()
 {
     //Array for the deck
 
 
     srand(time(NULL));
-
-    int num = (rand() % 13) + 1;
-
     
     double suits_numbers[4][13];
 
@@ -49,7 +50,41 @@ int main()
         cout << endl;
     }
 
-    cout << num;
+    cout << "Blackjack ($5 Minimum)" << endl;
+    int i;
+    int x;
+    int y;
+    double player_card1, player_card2;
+    double dealer_card1, dealer_card2;
+
+    for (i = 0; i < 4; i++)
+    {
+        x = (rand() % 4);
+        y = (rand() % 13);
+        if (i == 0)
+        {
+            player_card1 = suits_numbers[x][y];
+            cout << "Player Card 1: " << player_card1 << endl;
+        }
+        else if (i == 1)
+        {
+            dealer_card1 = suits_numbers[x][y];
+            cout << "Dealer Card 1: " << dealer_card1 << endl;
+        }
+        else if (i == 2)
+        {
+            player_card2 = suits_numbers[x][y];
+            cout << "Player Card 2: " << player_card2 << endl;
+        }
+        else if (i == 3)
+        {   dealer_card2 = suits_numbers[x][y];
+            cout << "Dealer Card 1: " << dealer_card1 << endl;   }
+
+        cout << "X: " << x << " Y: " << y << endl;
+    }
+
+    cout << dealer_card1 << " " << dealer_card2 << endl;
+    cout << player_card1 << " " << player_card2;
 
     void deal();
 
