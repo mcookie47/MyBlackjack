@@ -25,13 +25,21 @@ int main()
     for (int s = 0; s < 4; s++)
     {
         if (s == 0)
+        {
             cout << "Spades:\t\t";
+        }
         else if (s == 1)
+        {
             cout << "Clubs:\t\t";
+        }
         else if (s == 2)
+        {
             cout << "Diamonds:\t";
+        }
         else if (s == 3)
+        {
             cout << "Hearts:\t\t";
+        }
 
         for (int n = 0; n < 13; n++)
         {
@@ -41,11 +49,20 @@ int main()
             else if ((n >= 1) && (n <= 9))
                 cout << suits_numbers[s][n] << " ";
             else if (n == 10)
+            {
+                suits_numbers[s][n] = 10;
                 cout << "Jack" << " ";
+            }
             else if (n == 11)
+            {
+                suits_numbers[s][n] = 10;
                 cout << "Queen" << " ";
+            }
             else if (n == 12)
+            {
+                suits_numbers[s][n] = 10;
                 cout << "King" << " ";
+            }
         }
         cout << endl;
     }
@@ -56,6 +73,8 @@ int main()
     int y;
     double player_card1, player_card2;
     double dealer_card1, dealer_card2;
+    double player_total = 0;
+    double dealer_total = 0;
 
     for (i = 0; i < 4; i++)
     {
@@ -83,9 +102,38 @@ int main()
         cout << "X: " << x << " Y: " << y << endl;
     }
 
-    cout << dealer_card1 << " " << dealer_card2 << endl;
-    cout << player_card1 << " " << player_card2;
+    cout << "Dealer Hand: " << dealer_card1 << " " << dealer_card2 << endl;
+    dealer_total = dealer_card1 + dealer_card2;
+    cout << "Dealer Total: " << dealer_total << endl << endl;
+    
+    cout << "Player Hand: " << player_card1 << " " << player_card2 << endl;
+    player_total = player_card1 + player_card2;
+    cout << "Player Total: " << player_total << endl;
 
+    char hit;
+    double player_card3;
+
+
+    if ((player_total < 21) && (dealer_total != 21)) {
+        cout << "Hit? (Y/N)" << endl;
+        cin >> hit;
+        if (hit == 'Y')
+        {
+            player_card3 = suits_numbers[x][y];
+            cout << "Player Card 3: " << player_card3 << endl;
+            cout << "Player Hand: " << player_card1 << " " << player_card2 << " " << player_card3 << endl;
+            player_total = player_card1 + player_card2 + player_card3;
+            cout << "Player Total: " << player_total << endl;
+        }
+        else if (hit == 'N')
+        {
+
+        }
+        if ((player_total > dealer_total) && (player_total <= 21))
+            cout << "WIN!" << endl;
+        else
+            cout << "LOST!" << endl;
+    }
     void deal();
 
 }
