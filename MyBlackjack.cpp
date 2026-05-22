@@ -8,7 +8,6 @@ void deck(double card_suites[]);
 
 void deal();
 
-//void print(double print_cards[][]);
 
 int i;
 
@@ -32,18 +31,25 @@ int main()
     cout << "Hearts:\t\t";
     deck(cards_hearts);
     
-    double numbers_suits[13][4];
-    for (int n = 0; n < 13; n++)
+    double numbers_suits[4][13];
+    for (int n = 0; n < 4; n++)
     {
-        for (int s = 0; s < 4; s++)
+        if (n == 0)
+            cout << "Spades:\t\t";
+        else if (n == 1)
+            cout << "Clubs:\t\t";
+        else if (n == 2)
+            cout << "Diamonds:\t";
+        else if (n == 3)
+            cout << "Hearts:\t\t";
+
+        for (int s = 0; s < 13; s++)
         {
-            numbers_suits[n][s] = n+1;
+            numbers_suits[n][s] = s+1;
             cout << numbers_suits[n][s] << " ";
         }
         cout << endl;
     }
-
-    //print(numbers_suits);
 
     cout << num;
 
@@ -72,8 +78,3 @@ void deck(double card_suites[]) {
 void deal() {
 
 }
-
-/*void print(double print_cards[][])
-{
-    for (x = )
-}*/
