@@ -8,6 +8,8 @@ void deck(double card_suites[]);
 
 void deal();
 
+//void print(double print_cards[][]);
+
 int i;
 
 int main()
@@ -30,6 +32,19 @@ int main()
     cout << "Hearts:\t\t";
     deck(cards_hearts);
     
+    double numbers_suits[13][4];
+    for (int n = 0; n < 13; n++)
+    {
+        for (int s = 0; s < 4; s++)
+        {
+            numbers_suits[n][s] = n+1;
+            cout << numbers_suits[n][s] << " ";
+        }
+        cout << endl;
+    }
+
+    //print(numbers_suits);
+
     cout << num;
 
     void deal();
@@ -57,3 +72,8 @@ void deck(double card_suites[]) {
 void deal() {
 
 }
+
+/*void print(double print_cards[][])
+{
+    for (x = )
+}*/
